@@ -1,0 +1,171 @@
+
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+.guide { font-family: var(--font-sans); padding: 1rem 0; }
+.step { display: flex; gap: 14px; margin-bottom: 1.5rem; }
+.step-num {
+  width: 28px; height: 28px; border-radius: 50%; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 13px; font-weight: 500; margin-top: 2px;
+}
+.s1 .step-num { background: #EEEDFE; color: #534AB7; }
+.s2 .step-num { background: #E1F5EE; color: #085041; }
+.s3 .step-num { background: #FBEAF0; color: #72243E; }
+.s4 .step-num { background: #FAEEDA; color: #633806; }
+.step-body { flex: 1; }
+.step-title { font-size: 14px; font-weight: 500; color: var(--color-text-primary); margin-bottom: 6px; }
+.step-desc { font-size: 13px; color: var(--color-text-secondary); line-height: 1.6; margin-bottom: 8px; }
+.code-box {
+  background: var(--color-background-secondary);
+  border: 0.5px solid var(--color-border-tertiary);
+  border-radius: var(--border-radius-md);
+  padding: 12px 14px;
+  font-family: var(--font-mono); font-size: 11px; line-height: 1.9;
+  color: var(--color-text-primary); overflow-x: auto;
+}
+.c-tag { color: #7F77DD; }
+.c-atr { color: #D4537E; }
+.c-val { color: #1D9E75; }
+.c-com { color: var(--color-text-secondary); font-style: italic; }
+.c-key { color: #7F77DD; }
+.c-str { color: #1D9E75; }
+.divider { height: 0.5px; background: var(--color-border-tertiary); margin: 0.5rem 0 1.5rem; }
+.tip {
+  display: flex; gap: 8px; align-items: flex-start;
+  background: #EEEDFE; border-radius: var(--border-radius-md);
+  padding: 10px 12px; margin-top: 1rem;
+}
+.tip i { font-size: 16px; color: #534AB7; flex-shrink: 0; margin-top: 1px; }
+.tip span { font-size: 12px; color: #3C3489; line-height: 1.6; }
+</style>
+
+<h2 class="sr-only">How to add chatbot to your HTML file — step by step guide</h2>
+
+<div class="guide">
+
+  <div class="step s1">
+    <div class="step-num">1</div>
+    <div class="step-body">
+      <div class="step-title">CSS — &lt;head&gt; tag এর ভেতরে বসাও</div>
+      <div class="step-desc">তোমার file এ <code>&lt;/head&gt;</code> tag খোঁজো, তার ঠিক আগে এই CSS টা paste করো:</div>
+      <div class="code-box">
+<span class="c-tag">&lt;style&gt;</span><br>
+&nbsp;&nbsp;<span class="c-com">/* Chatbot button */</span><br>
+&nbsp;&nbsp;.chat-bubble { position:fixed; bottom:24px; right:24px;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;width:54px; height:54px; border-radius:50%;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;background:#7F77DD; color:#fff; border:none;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;font-size:22px; cursor:pointer; z-index:999; }<br><br>
+&nbsp;&nbsp;<span class="c-com">/* Chatbot window */</span><br>
+&nbsp;&nbsp;.chat-window { position:fixed; bottom:90px; right:24px;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;width:300px; background:#fff; border-radius:12px;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;border:1px solid #ddd; display:none; z-index:999;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;flex-direction:column; overflow:hidden; }<br>
+&nbsp;&nbsp;.chat-window.open { display:flex; }<br>
+&nbsp;&nbsp;.chat-header { background:#7F77DD; color:#fff;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;padding:12px 16px; font-size:14px; font-weight:500; }<br>
+&nbsp;&nbsp;.chat-msgs { height:220px; overflow-y:auto;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;padding:12px; display:flex; flex-direction:column; gap:8px; }<br>
+&nbsp;&nbsp;.bot-msg { background:#f0f0f0; border-radius:10px;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;padding:8px 12px; font-size:13px; max-width:85%; }<br>
+&nbsp;&nbsp;.user-msg { background:#7F77DD; color:#fff; border-radius:10px;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;padding:8px 12px; font-size:13px;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;max-width:85%; align-self:flex-end; }<br>
+&nbsp;&nbsp;.chat-opts { padding:10px; border-top:1px solid #eee;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;display:flex; flex-wrap:wrap; gap:6px; }<br>
+&nbsp;&nbsp;.opt { padding:5px 12px; border-radius:20px;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;border:1px solid #AFA9EC; background:#EEEDFE;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;color:#534AB7; font-size:12px; cursor:pointer; }<br>
+<span class="c-tag">&lt;/style&gt;</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="step s2">
+    <div class="step-num">2</div>
+    <div class="step-body">
+      <div class="step-title">HTML — &lt;/body&gt; tag এর ঠিক আগে বসাও</div>
+      <div class="step-desc">তোমার file এ <code>&lt;/body&gt;</code> খোঁজো, তার আগে এই chatbot HTML টা paste করো:</div>
+      <div class="code-box">
+<span class="c-com">&lt;!-- Chatbot button --&gt;</span><br>
+<span class="c-tag">&lt;button</span> <span class="c-atr">class=</span><span class="c-val">"chat-bubble"</span> <span class="c-atr">onclick=</span><span class="c-val">"toggleChat()"</span><span class="c-tag">&gt;</span>💬<span class="c-tag">&lt;/button&gt;</span><br><br>
+<span class="c-com">&lt;!-- Chatbot window --&gt;</span><br>
+<span class="c-tag">&lt;div</span> <span class="c-atr">class=</span><span class="c-val">"chat-window"</span> <span class="c-atr">id=</span><span class="c-val">"chatWindow"</span><span class="c-tag">&gt;</span><br>
+&nbsp;&nbsp;<span class="c-tag">&lt;div</span> <span class="c-atr">class=</span><span class="c-val">"chat-header"</span><span class="c-tag">&gt;</span>💬 Help Assistant<span class="c-tag">&lt;/div&gt;</span><br>
+&nbsp;&nbsp;<span class="c-tag">&lt;div</span> <span class="c-atr">class=</span><span class="c-val">"chat-msgs"</span> <span class="c-atr">id=</span><span class="c-val">"chatMsgs"</span><span class="c-tag">&gt;&lt;/div&gt;</span><br>
+&nbsp;&nbsp;<span class="c-tag">&lt;div</span> <span class="c-atr">class=</span><span class="c-val">"chat-opts"</span> <span class="c-atr">id=</span><span class="c-val">"chatOpts"</span><span class="c-tag">&gt;&lt;/div&gt;</span><br>
+<span class="c-tag">&lt;/div&gt;</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="step s3">
+    <div class="step-num">3</div>
+    <div class="step-body">
+      <div class="step-title">JavaScript — HTML এর নিচেই রাখো</div>
+      <div class="step-desc">Step 2 এর code এর ঠিক নিচে এই script টা বসাও। এখানেই তোমার questions & answers লেখা আছে:</div>
+      <div class="code-box">
+<span class="c-tag">&lt;script&gt;</span><br>
+<span class="c-key">var</span> data = {<br>
+&nbsp;&nbsp;<span class="c-str">"start"</span>: { msg: <span class="c-str">"Ki help lagbe?"</span>, opts: [<br>
+&nbsp;&nbsp;&nbsp;&nbsp;{ label: <span class="c-str">"Pricing"</span>, next: <span class="c-str">"pricing"</span> },<br>
+&nbsp;&nbsp;&nbsp;&nbsp;{ label: <span class="c-str">"Contact"</span>, next: <span class="c-str">"contact"</span> }]},<br><br>
+&nbsp;&nbsp;<span class="c-str">"pricing"</span>: { msg: <span class="c-str">"Basic: ৳500/mo!"</span>, opts: [<br>
+&nbsp;&nbsp;&nbsp;&nbsp;{ label: <span class="c-str">"Kinbo"</span>, link: <span class="c-str">"https://..."</span> },<br>
+&nbsp;&nbsp;&nbsp;&nbsp;{ label: <span class="c-str">"Back"</span>, next: <span class="c-str">"start"</span> }]},<br><br>
+&nbsp;&nbsp;<span class="c-str">"contact"</span>: { msg: <span class="c-str">"Email: hello@site.com"</span>, opts: [<br>
+&nbsp;&nbsp;&nbsp;&nbsp;{ label: <span class="c-str">"Back"</span>, next: <span class="c-str">"start"</span> }]}<br>
+};<br><br>
+<span class="c-key">function</span> toggleChat() {<br>
+&nbsp;&nbsp;var w = document.getElementById(<span class="c-str">'chatWindow'</span>);<br>
+&nbsp;&nbsp;w.classList.toggle(<span class="c-str">'open'</span>);<br>
+&nbsp;&nbsp;<span class="c-key">if</span>(w.classList.contains(<span class="c-str">'open'</span>)) goTo(<span class="c-str">'start'</span>);<br>
+}<br><br>
+<span class="c-key">function</span> goTo(key, userText) {<br>
+&nbsp;&nbsp;var m=document.getElementById(<span class="c-str">'chatMsgs'</span>);<br>
+&nbsp;&nbsp;var o=document.getElementById(<span class="c-str">'chatOpts'</span>);<br>
+&nbsp;&nbsp;<span class="c-key">if</span>(userText){ <span class="c-key">var</span> u=document.createElement(<span class="c-str">'div'</span>);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;u.className=<span class="c-str">'user-msg'</span>; u.textContent=userText; m.appendChild(u); }<br>
+&nbsp;&nbsp;<span class="c-key">var</span> s=data[key]; <span class="c-key">if</span>(!s) <span class="c-key">return</span>;<br>
+&nbsp;&nbsp;<span class="c-key">var</span> b=document.createElement(<span class="c-str">'div'</span>);<br>
+&nbsp;&nbsp;b.className=<span class="c-str">'bot-msg'</span>; b.textContent=s.msg; m.appendChild(b);<br>
+&nbsp;&nbsp;o.innerHTML=<span class="c-str">''</span>;<br>
+&nbsp;&nbsp;s.opts.forEach(<span class="c-key">function</span>(opt){<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="c-key">var</span> btn=document.createElement(<span class="c-str">'button'</span>);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;btn.className=<span class="c-str">'opt'</span>; btn.textContent=opt.label;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="c-key">if</span>(opt.link) btn.onclick=<span class="c-key">function</span>(){window.open(opt.link)};<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="c-key">else</span> btn.onclick=<span class="c-key">function</span>(){goTo(opt.next,opt.label)};<br>
+&nbsp;&nbsp;&nbsp;&nbsp;o.appendChild(btn);<br>
+&nbsp;&nbsp;});<br>
+&nbsp;&nbsp;m.scrollTop=m.scrollHeight;<br>
+}<br>
+<span class="c-tag">&lt;/script&gt;</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="step s4">
+    <div class="step-num">4</div>
+    <div class="step-body">
+      <div class="step-title">নিজের questions যোগ করো এইভাবে</div>
+      <div class="step-desc"><code>data</code> object এ নতুন block যোগ করো, তারপর কোনো option এর <code>next</code> এ সেই নাম দাও:</div>
+      <div class="code-box">
+<span class="c-str">"delivery"</span>: { msg: <span class="c-str">"3-5 din e deliver hoy!"</span>, opts: [<br>
+&nbsp;&nbsp;{ label: <span class="c-str">"Order korbo"</span>, link: <span class="c-str">"https://shop.com"</span> },<br>
+&nbsp;&nbsp;{ label: <span class="c-str">"Back"</span>, next: <span class="c-str">"start"</span> }<br>
+]}
+      </div>
+    </div>
+  </div>
+
+  <div class="tip">
+    <i class="ti ti-bulb" aria-hidden="true"></i>
+    <span>তোমার HTML file VS Code বা Notepad এ open করো → Ctrl+F দিয়ে <code>&lt;/head&gt;</code> আর <code>&lt;/body&gt;</code> খোঁজো → উপরের steps অনুযায়ী paste করো → file save করে browser এ open করো। নিচে ডানে 💬 button দেখতে পাবে!</span>
+  </div>
+
+</div>
