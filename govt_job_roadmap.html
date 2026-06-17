@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Govt Job Roadmap – Bank · CGL · CHSL</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;600;700&family=Poppins:wght@400;500;600;700;800&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --purple: #6C5CE7;
+    --purple-light: #EDE9FF;
+    --teal: #00B894;
+    --teal-light: #D8F8F1;
+    --coral: #E17055;
+    --coral-light: #FDECEA;
+    --blue: #0984E3;
+    --blue-light: #E8F4FD;
+    --green: #00B894;
+    --green-light: #D8F8F1;
+    --amber: #FDCB6E;
+    --amber-light: #FEF9E7;
+    --gray: #636E72;
+    --gray-light: #F1F2F6;
+    --text: #2D3436;
+    --text-muted: #636E72;
+    --bg: #F8F9FF;
+    --white: #FFFFFF;
+    --shadow: 0 2px 12px rgba(108,92,231,0.08);
+    --radius: 12px;
+  }
+
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    padding: 32px 20px 60px;
+    min-height: 100vh;
+  }
+
+  .page {
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  /* HEADER */
+  .header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 36px 24px;
+    background: linear-gradient(135deg, #6C5CE7 0%, #a29bfe 100%);
+    border-radius: 20px;
+    color: white;
+    position: relative;
+    overflow: hidden;
+  }
+  .header::before {
+    content: '';
+    position: absolute;
+    top: -40px; right: -40px;
+    width: 180px; height: 180px;
+    background: rgba(255,255,255,0.07);
+    border-radius: 50%;
+  }
+  .header::after {
+    content: '';
+    position: absolute;
+    bottom: -50px; left: -30px;
+    width: 220px; height: 220px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 50%;
+  }
+  .header h1 {
+    font-size: 28px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    margin-bottom: 6px;
+    position: relative;
+    z-index: 1;
+  }
+  .header p {
+    font-size: 14px;
+    opacity: 0.85;
+    position: relative;
+    z-index: 1;
+  }
+  .badges {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    margin-top: 14px;
+    position: relative;
+    z-index: 1;
+  }
+  .badge {
+    background: rgba(255,255,255,0.2);
+    border: 1px solid rgba(255,255,255,0.35);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+  }
+
+  /* PHASE LABEL */
+  .phase-label {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 14px;
+    margin-top: 32px;
+  }
+  .phase-label:first-of-type { margin-top: 0; }
+  .phase-dot {
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 800; font-size: 14px; color: white;
+    flex-shrink: 0;
+  }
+  .phase-label h2 {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text);
+  }
+  .phase-label span {
+    font-size: 12px;
+    color: var(--text-muted);
+    font-weight: 400;
+  }
+  .phase-line {
+    flex: 1;
+    height: 1px;
+    background: #e0e0e0;
+  }
+  .phase-tag {
+    font-size: 11px;
+    font-weight: 600;
+    padding: 3px 10px;
+    border-radius: 20px;
+  }
+
+  /* CARDS GRID */
+  .cards {
+    display: grid;
+    gap: 12px;
+    margin-bottom: 4px;
+  }
+  .cards-2 { grid-template-columns: 1fr 1fr; }
+  .cards-3 { grid-template-columns: 1fr 1fr 1fr; }
+
+  .card {
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: 18px 20px;
+    box-shadow: var(--shadow);
+    border-left: 4px solid transparent;
+    position: relative;
+  }
+  .card-icon {
+    font-size: 22px;
+    margin-bottom: 8px;
+  }
+  .card h3 {
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 4px;
+    color: var(--text);
+  }
+  .card p {
+    font-size: 12px;
+    color: var(--text-muted);
+    line-height: 1.5;
+  }
+  .card .tag {
+    display: inline-block;
+    margin-top: 8px;
+    font-size: 10px;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 10px;
+    letter-spacing: 0.3px;
+  }
+
+  /* ARROW CONNECTOR */
+  .connector {
+    text-align: center;
+    color: #ccc;
+    font-size: 22px;
+    margin: 8px 0;
+    line-height: 1;
+  }
+
+  /* SUBJECTS SECTION */
+  .section-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--text);
+    margin: 36px 0 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .section-title::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: #e0e0e0;
+  }
+
+  .subjects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+
+  .subject-card {
+    background: var(--white);
+    border-radius: 10px;
+    padding: 14px 16px;
+    box-shadow: var(--shadow);
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .subject-icon {
+    width: 32px; height: 32px;
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 16px;
+    flex-shrink: 0;
+  }
+  .subject-card h4 {
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 2px;
+    color: var(--text);
+  }
+  .subject-card p {
+    font-size: 11px;
+    color: var(--text-muted);
+  }
+
+  /* GOAL BOX */
+  .goal-box {
+    background: linear-gradient(135deg, #00B894, #00cec9);
+    color: white;
+    border-radius: 16px;
+    padding: 28px 32px;
+    text-align: center;
+    margin-top: 36px;
+  }
+  .goal-box h2 {
+    font-size: 22px;
+    font-weight: 800;
+    margin-bottom: 6px;
+  }
+  .goal-box p {
+    font-size: 13px;
+    opacity: 0.88;
+  }
+
+  /* STUDY HOURS TIP */
+  .tip-box {
+    background: var(--amber-light);
+    border: 1px solid var(--amber);
+    border-radius: 12px;
+    padding: 16px 20px;
+    margin-top: 16px;
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+  }
+  .tip-icon { font-size: 22px; }
+  .tip-box h4 { font-size: 13px; font-weight: 700; margin-bottom: 4px; }
+  .tip-box p { font-size: 12px; color: var(--text-muted); line-height: 1.5; }
+
+  /* FOOTER */
+  .footer {
+    text-align: center;
+    margin-top: 48px;
+    font-size: 12px;
+    color: #bbb;
+  }
+
+  /* COLORS */
+  .purple { border-left-color: var(--purple); }
+  .teal   { border-left-color: var(--teal); }
+  .coral  { border-left-color: var(--coral); }
+
+  .dot-purple { background: var(--purple); }
+  .dot-teal   { background: var(--teal); }
+  .dot-coral  { background: var(--coral); }
+
+  .tag-purple { background: var(--purple-light); color: var(--purple); }
+  .tag-teal   { background: var(--teal-light); color: #00845e; }
+  .tag-coral  { background: var(--coral-light); color: var(--coral); }
+  .tag-amber  { background: var(--amber-light); color: #b8860b; }
+
+  .phase-tag-purple { background: var(--purple-light); color: var(--purple); }
+  .phase-tag-teal   { background: var(--teal-light); color: #00845e; }
+  .phase-tag-coral  { background: var(--coral-light); color: var(--coral); }
+
+  .icon-blue   { background: var(--blue-light); }
+  .icon-green  { background: var(--green-light); }
+  .icon-amber  { background: var(--amber-light); }
+
+  @media print {
+    body { background: white; padding: 16px; }
+    .card, .subject-card { box-shadow: none; border: 1px solid #eee; }
+  }
+
+  @media (max-width: 600px) {
+    .cards-3 { grid-template-columns: 1fr 1fr; }
+    .subjects-grid { grid-template-columns: 1fr 1fr; }
+    .cards-2 { grid-template-columns: 1fr; }
+    .header h1 { font-size: 22px; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="header">
+    <h1>Govt Job Preparation Roadmap</h1>
+    <p>Age 19 → 27 · A complete 8-year plan</p>
+    <div class="badges">
+      <span class="badge">Bank PO</span>
+      <span class="badge">SSC CGL</span>
+      <span class="badge">SSC CHSL</span>
+    </div>
+  </div>
+
+  <!-- PHASE 1 -->
+  <div class="phase-label">
+    <div class="phase-dot dot-purple">1</div>
+    <div>
+      <h2>Phase 1 &nbsp;<span>Age 19–23</span></h2>
+    </div>
+    <div class="phase-line"></div>
+    <span class="phase-tag phase-tag-purple">Foundation</span>
+  </div>
+
+  <div class="cards cards-3">
+    <div class="card purple">
+      <div class="card-icon">🎓</div>
+      <h3>Honours Degree</h3>
+      <p>Primary focus. Don't neglect your academics.</p>
+      <span class="tag tag-purple">Top Priority</span>
+    </div>
+    <div class="card purple">
+      <div class="card-icon">🧮</div>
+      <h3>Daily Math Practice</h3>
+      <p>Solve job-relevant problems every single day.</p>
+      <span class="tag tag-purple">Daily</span>
+    </div>
+    <div class="card purple">
+      <div class="card-icon">📰</div>
+      <h3>GK &amp; Current Affairs</h3>
+      <p>Medium level. Build the reading habit early.</p>
+      <span class="tag tag-purple">Daily</span>
+    </div>
+  </div>
+
+  <div class="cards cards-2" style="margin-top:12px;">
+    <div class="card" style="border-left-color:#b2bec3;">
+      <div class="card-icon">💻</div>
+      <h3>Computer Basics</h3>
+      <p>Revise your notes once a week. Keep it light.</p>
+      <span class="tag" style="background:#f1f2f6;color:#636e72;">Weekly</span>
+    </div>
+    <div class="card" style="border-left-color:#b2bec3;">
+      <div class="card-icon">🧩</div>
+      <h3>Reasoning Practice</h3>
+      <p>Dedicate at least 1 day per week.</p>
+      <span class="tag" style="background:#f1f2f6;color:#636e72;">Weekly</span>
+    </div>
+  </div>
+
+  <div class="connector">↓</div>
+
+  <!-- PHASE 2 -->
+  <div class="phase-label">
+    <div class="phase-dot dot-teal">2</div>
+    <div>
+      <h2>Phase 2 &nbsp;<span>Age 23–24</span></h2>
+    </div>
+    <div class="phase-line"></div>
+    <span class="phase-tag phase-tag-teal">Structured Prep</span>
+  </div>
+
+  <div class="cards cards-2">
+    <div class="card teal">
+      <div class="card-icon">🖥️</div>
+      <h3>Online Coaching</h3>
+      <p>Join a structured course. Attend live classes, complete full mock test series.</p>
+      <span class="tag tag-teal">5–6 hrs/day</span>
+    </div>
+    <div class="card teal">
+      <div class="card-icon">📝</div>
+      <h3>First Attempt</h3>
+      <p>Appear in exams. Build exam temperament and confidence. Result doesn't matter yet.</p>
+      <span class="tag tag-teal">Experience</span>
+    </div>
+  </div>
+
+  <div class="connector">↓</div>
+
+  <!-- PHASE 3 -->
+  <div class="phase-label">
+    <div class="phase-dot dot-coral">3</div>
+    <div>
+      <h2>Phase 3 &nbsp;<span>Age 24–26</span></h2>
+    </div>
+    <div class="phase-line"></div>
+    <span class="phase-tag phase-tag-coral">Full Focus</span>
+  </div>
+
+  <div class="cards cards-3">
+    <div class="card coral">
+      <div class="card-icon">⏰</div>
+      <h3>Full-time Study</h3>
+      <p>8–10 hours daily. Dedicated, distraction-free schedule.</p>
+      <span class="tag tag-coral">8–10 hrs/day</span>
+    </div>
+    <div class="card coral">
+      <div class="card-icon">📊</div>
+      <h3>Mock Tests</h3>
+      <p>3–4 full mocks per week. Analyse every wrong answer deeply.</p>
+      <span class="tag tag-coral">3–4/week</span>
+    </div>
+    <div class="card coral">
+      <div class="card-icon">🔄</div>
+      <h3>Attempts & Revision Cycles</h3>
+      <p>Repeat all subjects systematically. Keep revising until you crack it.</p>
+      <span class="tag tag-coral">Ongoing</span>
+    </div>
+  </div>
+
+  <div class="tip-box">
+    <div class="tip-icon">💡</div>
+    <div>
+      <h4>Study Hours Tip (Phase 3)</h4>
+      <p>Morning 3–4 hrs → Hardest subjects (Quant, Reasoning). Afternoon 2–3 hrs → Mocks &amp; PYQs. Evening 2–3 hrs → GK, Current Affairs, Banking Awareness. Sleep 7–8 hrs — a tired brain retains nothing.</p>
+    </div>
+  </div>
+
+  <!-- SUBJECTS -->
+  <div class="section-title">Subject Breakdown</div>
+
+  <div class="subjects-grid">
+    <div class="subject-card">
+      <div class="subject-icon icon-blue">📖</div>
+      <div>
+        <h4>English</h4>
+        <p> Will be complete by Hons. ✓</p>
+      </div>
+    </div>
+    <div class="subject-card">
+      <div class="subject-icon icon-blue">🔢</div>
+      <div>
+        <h4>Mathematics</h4>
+        <p>Daily practice</p>
+      </div>
+    </div>
+    <div class="subject-card">
+      <div class="subject-icon icon-blue">🧩</div>
+      <div>
+        <h4>Reasoning</h4>
+        <p>Weekly practice</p>
+      </div>
+    </div>
+    <div class="subject-card">
+      <div class="subject-icon icon-green">🌍</div>
+      <div>
+        <h4>Current Affairs</h4>
+        <p>Daily reading habit</p>
+      </div>
+    </div>
+    <div class="subject-card">
+      <div class="subject-icon icon-green">📚</div>
+      <div>
+        <h4>Static GK</h4>
+        <p>History, Geo, Polity</p>
+      </div>
+    </div>
+    <div class="subject-card">
+      <div class="subject-icon icon-green">💻</div>
+      <div>
+        <h4>Computer Basics</h4>
+        <p>Weekly revision</p>
+      </div>
+    </div>
+    <div class="subject-card">
+      <div class="subject-icon icon-amber">⌨️</div>
+      <div>
+        <h4>Typing Test</h4>
+        <p>Optional · CHSL only</p>
+      </div>
+    </div>
+    <div class="subject-card">
+      <div class="subject-icon icon-amber">🏦</div>
+      <div>
+        <h4>Banking Awareness</h4>
+        <p>Bank exams only</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- GOAL -->
+  <div class="goal-box">
+    <h2>🎯 Goal: Govt Job by Age 26 or 27 </h2>
+    <p>Bank PO &nbsp;·&nbsp; SSC CGL &nbsp;·&nbsp; SSC CHSL</p>
+  </div>
+
+  <div class="footer">
+    Prepared with HGT · Best of luck on your journey! 💪
+  </div>
+
+</div>
+</body>
+</html>
